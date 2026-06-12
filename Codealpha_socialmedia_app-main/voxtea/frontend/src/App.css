@@ -1,0 +1,235 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* Light theme (default) */
+:root {
+  --background: #fff5dc;
+  --text: #000000;
+
+  --button-bg: #1d2954;
+  --button-bgh: #DB2F62;
+  --button-text: #ffffff;
+  --button-border: #2f4286;
+
+  --form-bg: #233265;
+  --form-text: #fff5dc;
+  --form-border: #DB2F62;
+  --form-input-hover: #e46389;
+
+  --topbar-bg: #1d2954;
+  --topbar-text: #DB2F62;
+  --topbar-button-bg: #233265;
+  --topbar-button-text: #fff5dc;
+  --topbar-button-h: #DB2F62;
+
+  --bottombar-bg: #1d2954;
+  --bottombar-text: #fff5dc;
+
+  --setting-bg:#FFE6A9;
+  --setting-border: #2f4286;
+
+  --profile-border: #2f4286;
+}
+
+/* Dark theme */
+.dark-theme {
+  --background: #233265;
+  --text: #fff5dc;
+
+  --button-bg: #fff5dc;
+  --button-bgh: #DB2F62;
+  --button-text: #000000;
+  --button-border: #2f4286;
+
+  --form-bg: #2f4286;
+  --form-text: #fff5dc;
+  --form-border: #DB2F62;
+  --form-input-hover: #ed97b1;
+
+  --topbar-bg: #182143;
+  --topbar-text: #DB2F62;
+  --topbar-button-bg: #233265;
+  --topbar-button-text: #fff5dc;
+  --topbar-button-h: #DB2F62;
+
+  --bottombar-bg: #182143;
+  --bottombar-text: #fff5dc;
+
+  --setting-bg:#2f4286;
+  --setting-border: #DB2F62;
+
+  --profile-border: #DB2F62;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+button {
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  padding: 10px 20px;
+  margin: 10px 20px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  border-radius: 5px;
+}
+@keyframes wiggle {0% {transform: rotate(0deg);}25% {transform: rotate(-2deg);}
+  50% {transform: rotate(2deg);}75% {transform: rotate(-2deg);}100% {transform: rotate(0deg);}
+}
+button:hover{
+  background-color: #DB2F62;
+  animation: wiggle 0.4s ease-in-out;
+}
+
+form{
+  margin: auto;
+  padding: 10px 20px 10px 20px;
+  background-color: var(--form-bg);
+  border: 3px solid var(--form-border);
+  border-radius: 15px;
+  color: var(--form-text);
+  text-align: center;
+  box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.2);
+}
+
+input[type=text], select {
+  width: 100%;
+  padding: 5px 10px;
+  margin: auto;
+  display: inline-block;
+  border: 1px solid #1d2954;;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+input[type=password], select {
+  width: 100%;
+  padding: 5px 10px;
+  margin: auto;
+  display: inline-block;
+  border: 1px solid #1d2954;;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+input:hover{
+  background-color: var(--form-input-hover);
+}
+
+.setting{
+  border: 3px solid var(--setting-border);
+  border-radius: 15px;
+  background-color: var(--setting-bg);
+  margin: 10px auto;
+  max-width: 80ch;
+  box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.2);
+}
+
+.buffer{
+  margin: 10px auto;
+  min-height: 15px;
+}
+
+.profilePicture{
+  border: 3px solid var(--profile-border);
+  border-radius: 50%;
+}
+
+.button-icon{
+  border-radius: 50%;
+  max-height: 6ch;
+  max-width: 6ch;
+  background-color: var(--background);
+  margin-top: 10px 10px;
+}
+.button-icon:hover{
+  opacity: 0.8;
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background-color: var(--background);
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 500px;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.popup-content h2 {
+  margin-top: 0;
+}
+.popup-content ul {
+  list-style-type: none;
+  padding: 0;
+}
+.popup-content li {
+  padding: 8px;
+  border-bottom: 1px solid #2f4286;
+}
+.popup-content li:last-child {
+  border-bottom: none;
+}
